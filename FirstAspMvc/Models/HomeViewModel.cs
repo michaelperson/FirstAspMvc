@@ -7,5 +7,6 @@ namespace FirstAspMvc.Models
         public List<ServicesModel> MesServices { get; set; }
         public HoraireViewModel Horaire { get; set; }
 
+        public string AboutUs { get; set; }
     }
 }

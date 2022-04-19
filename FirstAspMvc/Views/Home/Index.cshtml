@@ -8,7 +8,20 @@
       <div class="main">
         <div class="container_12">
           <div class="wrapper p5">
+              @foreach(ServicesModel sm in Model.MesServices)
+                {
+                @:<article class="grid_4">
+                  @:<div class="wrapper">
+                    @:<figure class="img-indent"><img src="/images/@sm.Image" alt=""></figure>
+                    @:<div class="extra-wrap">
+                    @:<h4>@sm.Titre</h4>
+                    @:<p class="p2">@sm.Description</p>
+                    @:<a class="button" href="#">Read More</a> </div>
+                 @:</div>
+               @:</article> 
+                                                    } 
             <article class="grid_4">
+
               <div class="wrapper">
                 <figure class="img-indent"><img src="/images/page1-img1.png" alt=""></figure>
                 <div class="extra-wrap">
@@ -43,7 +56,7 @@
                   <article class="grid_8">
                     <div class="indent-left">
                       <h2>Welcome!</h2>
-                      <p class="prev-indent-bot"><strong>Car Repair</strong> is one of free website templates created by TemplateMonster.com team. This website template is optimized for 1280X1024 screen resolution. It is also XHTML &amp; CSS valid. </p>
+                      <p class="prev-indent-bot">@Model.AboutUs </p>
                       <p class="border-bot">This Car Repair Template goes with two packages – with PSD source files and without them. PSD source files are available for free for the registered members of TemplatesMonster.com. The basic package (without PSD source) is available for anyone without registration.</p>
                     </div>
                     <div class="wrapper">

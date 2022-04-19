@@ -26,8 +26,10 @@ namespace FirstAspMvc.Controllers
             HVM.Horaire.Week = "Ouvert de 8:00 à 17:00 sans interruptions";
             HVM.Horaire.Weekend = "Ouvert de 12:-10 à 12-09 sur rendez-vous ";
             HVM.MesServices = new List<ServicesModel>();
-            HVM.MesServices.Add(new ServicesModel() { Description = "zorba", Image = "ici.jpg", Titre = "Service1" });
-            HVM.MesServices.Add(new ServicesModel() { Description = "zorba2", Image = "ici.jpg", Titre = "Service2" });
+            HVM.MesServices.Add(new ServicesModel() { Description = "Lorem ipsum dolosit amet, consetetur sadipng elitr sed diam nonumy eirmod.", Image = "page1-img1.png", Titre = "Engine Repair" });
+            HVM.MesServices.Add(new ServicesModel() { Description = "Lorem ipsum dolosit amet, consetetur sadipng elitr sed diam nonumy eirmod.", Image = "page1-img2.png", Titre = "Wheel Alignment" });
+            HVM.MesServices.Add(new ServicesModel() { Description = "Lorem ipsum dolosit amet, consetetur sadipng elitr sed diam nonumy eirmod.", Image = "page1-img3.png", Titre = "Fluid Exchanges" });
+            HVM.AboutUs= @"TechnoGarage is one of free website templates created by TemplateMonster.com team. This website template is optimized for 1280X1024 screen resolution. It is also XHTML & CSS valid.";
             return View(HVM);
         }
 
