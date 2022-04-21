@@ -1,4 +1,5 @@
-﻿using FirstAspMvc.Models;
+﻿using FirstAspMvc.Infra;
+using FirstAspMvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -20,6 +21,8 @@ namespace FirstAspMvc.Controllers
 
         public IActionResult Index()
         {
+             
+            //1! model par vue
             HomeViewModel HVM = new HomeViewModel();
 
             HVM.Horaire = new HoraireViewModel();
@@ -29,12 +32,25 @@ namespace FirstAspMvc.Controllers
             HVM.MesServices.Add(new ServicesModel() { Description = "Lorem ipsum dolosit amet, consetetur sadipng elitr sed diam nonumy eirmod.", Image = "page1-img1.png", Titre = "Engine Repair" });
             HVM.MesServices.Add(new ServicesModel() { Description = "Lorem ipsum dolosit amet, consetetur sadipng elitr sed diam nonumy eirmod.", Image = "page1-img2.png", Titre = "Wheel Alignment" });
             HVM.MesServices.Add(new ServicesModel() { Description = "Lorem ipsum dolosit amet, consetetur sadipng elitr sed diam nonumy eirmod.", Image = "page1-img3.png", Titre = "Fluid Exchanges" });
+            HVM.MesServices.Add(new ServicesModel() { Description = "Lorem ipsum dolosit amet, consetetur sadipng elitr sed diam nonumy eirmod.", Image = "page1-img3.png", Titre = "Fluid Exchanges" });
             HVM.AboutUs= @"TechnoGarage is one of free website templates created by TemplateMonster.com team. This website template is optimized for 1280X1024 screen resolution. It is also XHTML & CSS valid.";
+            ViewBag.Telephone = "071458692";
+            //ViewData, ViewBag, Tempdata
+            ViewData["Bonjour"] = "Hello Darling";
+            ViewBag.Horaire = "Nos heures d'ouvertures";
+            TempData["Compteur"] = 1;
+            
             return View(HVM);
         }
 
         public IActionResult Privacy()
         {
+            if(TempData.ContainsKey("Telephone"))
+            {
+                TempData["Compteur"] = ((int)TempData["Compteur"]) + 1;
+                TempData.Keep();
+            }
+            ViewBag.Telephone = Constantes.Telephone;
             return View();
         }
 

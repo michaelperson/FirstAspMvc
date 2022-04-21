@@ -1,0 +1,47 @@
+﻿@model IEnumerable<GarageOO.Models.Interfaces.IVoiture>
+
+@{
+    ViewData["Title"] = "Mes voitures";
+}
+
+<h1>Mes voitures</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="price-list">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NbPortes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CapaciteCoffre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NbSiege)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbPortes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CapaciteCoffre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbSiege)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
