@@ -50,7 +50,7 @@ namespace FirstAspMvc.Controllers
                 TempData["Compteur"] = ((int)TempData["Compteur"]) + 1;
                 TempData.Keep();
             }
-            ViewBag.Telephone = Constantes.Telephone;
+            ViewBag.Telephone = "071458692";
             return View();
         }
 

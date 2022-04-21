@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GarageOO.Models.Interfaces.IVoiture>
+﻿@model IEnumerable<FirstAspMvc.Models.VoitureViewModel>
 
 @{
     ViewData["Title"] = "Mes voitures";
@@ -23,9 +23,6 @@
                       <table class="price-list">
                         <thead>
                           <tr>
-                           <th>
-                                @Html.DisplayNameFor(model => model.NbPortes)
-                            </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.CapaciteCoffre)
                             </th>
@@ -38,9 +35,6 @@
                          @foreach (var item in Model) 
                          {
                                     <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.NbPortes)
-                                        </td>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.CapaciteCoffre)
                                         </td>
